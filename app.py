@@ -54,8 +54,8 @@ class JSONEncodedDict(TypeDecorator):
 class Message(Base):
     __tablename__ = 'messages'
     id = Column(Integer, primary_key=True)
-    nome_usuario = Column(String(64), unique=True)
-    id_profile_linkedin = Column(String(64), unique=True)
+    nome_usuario = Column(String(2042))
+    id_profile_linkedin = Column(String(2042), unique=True)
     message = Column(JSONEncodedDict())
 
     def __init__(self, nome_usuario, id_profile_linkedin, message):
